@@ -48,6 +48,10 @@ public class Player : MonoBehaviour
         if (checkGround.isGrounded)
         {
             rb.velocity = new Vector2(horizontal * speedMove, rb.velocity.y);
+            animPlayer.SetBool("isGrounded", true);
+        }
+        else {
+            animPlayer.SetBool("isGrounded", false);
         }
 
         if (!isFacingRight && horizontal > 0f)
