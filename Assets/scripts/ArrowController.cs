@@ -5,8 +5,10 @@ using UnityEngine;
 public class ArrowController : MonoBehaviour
 {
     public float speedArrow;
+    public float liveArrow;
 
     private Vector2 arrowDirection;
+    private float timeAlive = 0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,16 +18,28 @@ public class ArrowController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        movementArrow();
+    }
+
+    private void movementArrow() {
         transform.Translate(arrowDirection * speedArrow * Time.fixedDeltaTime);
 
         if (arrowDirection == Vector2.right)
         {
             GetComponent<SpriteRenderer>().flipX = false;
         }
-        else {
+        else
+        {
             GetComponent<SpriteRenderer>().flipX = true;
         }
+        timeAlive += Time.fixedDeltaTime;
+
+        if (timeAlive >= liveArrow) {
+            Destroy(gameObject);
+            
+        }
     }
+
 
     public void setDirection( Vector2 dir) {
         arrowDirection = dir;

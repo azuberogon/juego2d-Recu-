@@ -12,35 +12,40 @@ public class Player : MonoBehaviour
     public Animator animPlayer;
     public Transform transformPlayer;
     public GameObject arrowPrefab;
+    public float waithShootTime;
 
     private float horizontal;
     private bool isFacingRight = true;
     private Vector2 directionArrow;
-    
-    
+    private float lastShoot;
+
+
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
         chekMovement();
-    
+
     }
 
     /// <summary>
     /// revisar lo que pas amañana no entra por los if debug 
     /// </summary>
-    private void chekMovement() {
+    private void chekMovement()
+    {
 
-        if (Mathf.Abs(horizontal) != 0f) {
-           
+        if (Mathf.Abs(horizontal) != 0f)
+        {
+
             animPlayer.SetBool("isRunning", true);
         }
-        else {
-           
+        else
+        {
+
             animPlayer.SetBool("isRunning", false);
         }
 
@@ -53,7 +58,8 @@ public class Player : MonoBehaviour
             rb.velocity = new Vector2(horizontal * speedMove, rb.velocity.y);
             animPlayer.SetBool("isGrounded", true);
         }
-        else {
+        else
+        {
             animPlayer.SetBool("isGrounded", false);
         }
 
@@ -70,35 +76,44 @@ public class Player : MonoBehaviour
 
 
     }
-    
+
     public void Move(InputAction.CallbackContext context)
     {
-        
-            horizontal = context.ReadValue<Vector2>().x;
-        
-        
+
+        horizontal = context.ReadValue<Vector2>().x;
+
+
     }
-    public void Jump() {
-        if (checkGround.isGrounded) {
+    public void Jump()
+    {
+        if (checkGround.isGrounded)
+        {
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
         }
-        
+
     }
 
-    public void Shoot() {
+    public void Shoot()
+    {
+
+
         //Debug.Log("Baaaaang");
-        GameObject arrow = Instantiate(arrowPrefab, transformPlayer.position, Quaternion.identity);
-        if (sprtRnd.flipX)
-        { //mira hacia la izquierda 
-            directionArrow = Vector2.left;
+
+        if (Time.time < lastShoot + waithShootTime)
+        {
+            GameObject arrow = Instantiate(arrowPrefab, transformPlayer.position, Quaternion.identity);
+            if (sprtRnd.flipX)
+            { //mira hacia la izquierda 
+                directionArrow = Vector2.left;
+            }
+            else
+            { // mira hacia la derecha 
+                directionArrow = Vector2.right;
+            }
+            arrow.GetComponent<ArrowController>().setDirection(directionArrow);
+
+            lastShoot = Time.time;
         }
-        else { // mira hacia la derecha 
-            directionArrow = Vector2.right;
-        }
-        
-        arrow.GetComponent<ArrowController>().setDirection(directionArrow);
-    
+
     }
-
-
 }

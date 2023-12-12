@@ -459,6 +459,7 @@ MonoBehaviour:
   animPlayer: {fileID: 307495978}
   transformPlayer: {fileID: 307495980}
   arrowPrefab: {fileID: 8324090875253417128, guid: 5812836da881c1e418a9be66f1147202, type: 3}
+  waithShootTime: 1
 --- !u!114 &307495984
 MonoBehaviour:
   m_ObjectHideFlags: 0
