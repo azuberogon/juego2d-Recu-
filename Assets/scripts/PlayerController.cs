@@ -99,8 +99,9 @@ public class Player : MonoBehaviour
 
         //Debug.Log("Baaaaang");
 
-        if (Time.time < lastShoot + waithShootTime)
+        if (Time.time > lastShoot + waithShootTime)
         {
+            animPlayer.SetTrigger("shoot");
             GameObject arrow = Instantiate(arrowPrefab, transformPlayer.position, Quaternion.identity);
             if (sprtRnd.flipX)
             { //mira hacia la izquierda 
