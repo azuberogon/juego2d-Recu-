@@ -10,9 +10,12 @@ public class Player : MonoBehaviour
     public float jumpingPower;
     public SpriteRenderer sprtRnd;
     public Animator animPlayer;
+    public Transform transformPlayer;
+    public GameObject arrowPrefab;
 
     private float horizontal;
     private bool isFacingRight = true;
+    private Vector2 directionArrow;
     
     
     void Start()
@@ -33,11 +36,11 @@ public class Player : MonoBehaviour
     private void chekMovement() {
 
         if (Mathf.Abs(horizontal) != 0f) {
-            Debug.Log("si entra por aqui true ");
+           
             animPlayer.SetBool("isRunning", true);
         }
         else {
-            Debug.Log("si entra por aqui false ");
+           
             animPlayer.SetBool("isRunning", false);
         }
 
@@ -80,6 +83,21 @@ public class Player : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
         }
         
+    }
+
+    public void Shoot() {
+        //Debug.Log("Baaaaang");
+        GameObject arrow = Instantiate(arrowPrefab, transformPlayer.position, Quaternion.identity);
+        if (sprtRnd.flipX)
+        { //mira hacia la izquierda 
+            directionArrow = Vector2.left;
+        }
+        else { // mira hacia la derecha 
+            directionArrow = Vector2.right;
+        }
+        
+        arrow.GetComponent<ArrowController>().setDirection(directionArrow);
+    
     }
 
 
