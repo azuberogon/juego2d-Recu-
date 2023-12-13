@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class NewBehaviourScript : MonoBehaviour
 {
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Player")) { 
+        
+            Debug.Log("elñ enemigo ataca ")
+        }
+    }
     // Start is called before the first frame update
     void Start()
     {
