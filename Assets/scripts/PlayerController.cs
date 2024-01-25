@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -13,6 +15,7 @@ public class Player : MonoBehaviour
     public Transform transformPlayer;
     public GameObject arrowPrefab;
     public float waithShootTime;
+    public UnityEvent loadNewScene;
 
     private float horizontal;
     private bool isFacingRight = true;
@@ -117,4 +120,23 @@ public class Player : MonoBehaviour
         }
 
     }
+
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Enemy")) {
+            animPlayer.SetTrigger("death");
+          
+        }
+        
+    }
+
+    private void ldScene() {
+        loadNewScene.Invoke();
+    }
+
+
+
+
+
 }

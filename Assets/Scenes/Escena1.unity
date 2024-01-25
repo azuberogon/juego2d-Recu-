@@ -267,6 +267,50 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &157063804
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 157063806}
+  - component: {fileID: 157063805}
+  m_Layer: 0
+  m_Name: SceneManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &157063805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157063804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e32e75aec05d93140b68bd958c1c575a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &157063806
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157063804}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.7206596, y: 6.832577, z: -0.21491157}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &307817385
 GameObject:
   m_ObjectHideFlags: 0
@@ -2253,7 +2297,7 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.00827527, y: -0.041375756}
@@ -2286,10 +2330,10 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.0001
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -2510,6 +2554,21 @@ MonoBehaviour:
   transformPlayer: {fileID: 1172071816}
   arrowPrefab: {fileID: 8324090875253417128, guid: 5812836da881c1e418a9be66f1147202, type: 3}
   waithShootTime: 1
+  loadNewScene:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 157063805}
+        m_TargetAssemblyTypeName: NewBehaviourScript, Assembly-CSharp
+        m_MethodName: loadscene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Escena1
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!50 &1172071819
 Rigidbody2D:
   serializedVersion: 4
@@ -2837,3 +2896,4 @@ SceneRoots:
   - {fileID: 774513695}
   - {fileID: 1172071816}
   - {fileID: 1136105623}
+  - {fileID: 157063806}
