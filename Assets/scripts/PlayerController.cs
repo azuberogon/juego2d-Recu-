@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     public Transform transformPlayer;
     public GameObject arrowPrefab;
     public float waithShootTime;
+    public GameObject arrowOut;
     public UnityEvent loadNewScene;
 
     private float horizontal;
@@ -95,17 +96,22 @@ public class Player : MonoBehaviour
         }
 
     }
-
-    public void Shoot()
-    {
-
-
-        //Debug.Log("Baaaaang");
-
+    public void shootAnimation() {
         if (Time.time > lastShoot + waithShootTime)
         {
+        
             animPlayer.SetTrigger("shoot");
-            GameObject arrow = Instantiate(arrowPrefab, transformPlayer.position, Quaternion.identity);
+            lastShoot = Time.time;
+        }
+        
+    }
+    public void Shoot()
+    {
+        //Debug.Log("Baaaaang");
+
+        
+            
+            GameObject arrow = Instantiate(arrowPrefab, arrowOut.transform.position, Quaternion.identity);
             if (sprtRnd.flipX)
             { //mira hacia la izquierda 
                 directionArrow = Vector2.left;
@@ -116,8 +122,8 @@ public class Player : MonoBehaviour
             }
             arrow.GetComponent<ArrowController>().setDirection(directionArrow);
 
-            lastShoot = Time.time;
-        }
+            
+        
 
     }
 
