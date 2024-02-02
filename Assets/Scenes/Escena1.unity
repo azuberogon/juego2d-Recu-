@@ -11253,7 +11253,7 @@ Transform:
   m_GameObject: {fileID: 307817385}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.67163014, y: 2.720016, z: -9.026697}
+  m_LocalPosition: {x: 72.46837, y: 2.500016, z: -9.026697}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -25721,7 +25721,7 @@ Transform:
   m_GameObject: {fileID: 357101773}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.869, y: -14.74, z: 0}
+  m_LocalPosition: {x: 12.881, y: -14.74, z: 0}
   m_LocalScale: {x: -0.04732717, y: 1.1367188, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -25759,7 +25759,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 4.491084, y: -2.052217}
+  m_Offset: {x: 4.694972, y: -2.052217}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -25770,7 +25770,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 30.980219, y: 1.8327837}
+  m_Size: {x: 30.572443, y: 1.8327837}
   m_EdgeRadius: 0
 --- !u!1 &371662621
 GameObject:
@@ -26270,7 +26270,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.67163014, y: 2.720016, z: -9.026697}
+  m_LocalPosition: {x: 72.46837, y: 2.500016, z: -9.026697}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -27162,8 +27162,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1038657271
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 1095436418, guid: 0078425749949e34ab7c7f29911dbed2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -27185,7 +27185,7 @@ Transform:
   m_GameObject: {fileID: 1136105619}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 90.2, y: 0.32, z: 0}
+  m_LocalPosition: {x: 76.59, y: 0.32, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -27242,6 +27242,7 @@ MonoBehaviour:
   player: {fileID: 1136105619}
   rb: {fileID: 1136105627}
   speedArchery: 5
+  animPlayer: {fileID: 1136105621}
 --- !u!50 &1136105627
 Rigidbody2D:
   serializedVersion: 4
@@ -27681,7 +27682,7 @@ Transform:
   m_GameObject: {fileID: 1172071813}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.67, y: 3.2, z: 0}
+  m_LocalPosition: {x: 69.47, y: 2.98, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -28169,7 +28170,7 @@ GameObject:
   - component: {fileID: 1365536274}
   m_Layer: 0
   m_Name: Pinchos
-  m_TagString: Pinchos1
+  m_TagString: Pinchos
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28218,7 +28219,7 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -7.637228e-14, y: 3.374221}
@@ -29078,7 +29079,7 @@ Transform:
   m_GameObject: {fileID: 2130333229}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.19, y: -15.83, z: 0}
+  m_LocalPosition: {x: 12.19, y: -15.71, z: 0}
   m_LocalScale: {x: -0.07248325, y: 1.1367188, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -8,6 +8,7 @@ public class ArcheryController : MonoBehaviour
     public GameObject player;
     public Rigidbody2D rb;
     public float speedArchery;
+    public Animator animPlayer;
 
     private bool ArcheryAttacking = false;
     // Start is called before the first frame update
@@ -30,5 +31,20 @@ public class ArcheryController : MonoBehaviour
         {
             rb.velocity = new Vector2((-1f) * speedArchery, 0);
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Flecha") )
+        {
+            animPlayer.SetTrigger("Death");
+            
+
+        }
+
+    }
+    public void death()
+    {
+        Destroy(gameObject);
     }
 }
